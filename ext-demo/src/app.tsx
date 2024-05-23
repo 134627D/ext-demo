@@ -28,6 +28,11 @@ export function App() {
       <p class="read-the-docs">
         Click on the Vite and Preact logos to learn more
       </p>
+      
+      <p class="read-the-docs">
+        HELLO VITE
+      </p>
+
     </>
   )
 }
