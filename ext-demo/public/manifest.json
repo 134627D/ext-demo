@@ -4,12 +4,30 @@
   "version": "1.0",
   "description": "Description of my extension",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs"
   ],
   "action": {
     "default_popup": "index.html"
   },
   "host_permissions": [
     "http://*/*"
+  ],
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module",
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://nyjmglapp.ecwcloud.com/*"
+      ],
+      "js": [
+        "src/contentScript/index.ts"
+      ]
+    }
   ]
 }
